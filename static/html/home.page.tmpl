@@ -1,0 +1,17 @@
+{{ template "base" .}}
+
+{{define "title"}}Create{{end}}
+
+{{define "body"}}
+  <div class="relative flex flex-col items-center gap-4 bg-white mx-4 p-4 rounded-lg md:w-[500px] w-full shadow-lg">
+    <span class="absolute -left-6 text-6xl -top-4">🎁</span> 
+    <span class="absolute -right-6 text-6xl -bottom-4">🎁</span> 
+    <p class="font-bold text-center p-4 italic text-gray-600">
+      Enter the full names, age and success message to your candidate of choice. That will help in generating the card
+    </p>
+    <input class="w-full outline-none border border-gray-300 p-2 rounded-md" placeholder="Full names" name="name" id="name">
+    <input type="number" class="w-full bg-white outline-none border border-gray-300 p-2 rounded-md" placeholder="Age" name="age" id="age">
+    <textarea class="w-full bg-white outline-none border border-gray-300 p-2 rounded-md" rows="5" placeholder="Message" id="message" name="message" ></textarea>
+    <button class="bg-fuchsia-500 text-white rounded-md w-full px-4 py-2" id="create-btn">Create success card</button>
+  </div>
+{{end}}

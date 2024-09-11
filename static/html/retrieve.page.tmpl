@@ -1,0 +1,13 @@
+{{ template "base" .}}
+
+{{define "title"}}
+  {{ .Wish.Name }} We Wish 
+{{end}}
+
+{{define "body"}}
+  <div class="relative flex flex-col items-center gap-4 bg-white mx-4 p-4 rounded-lg md:w-[400px] w-full">
+    <p class="font-bold text-center p-4 italic text-gray-600">
+      Enter the full names, age and birthday message to you birthday star of the day. That will help in generating the card
+    </p>
+  </div>
+{{end}}

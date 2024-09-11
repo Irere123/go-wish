@@ -1,0 +1,59 @@
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards, fly 2s ease-in-out forwards;
+}
+
+/* Emoji entrance */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Emoji flight path */
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(var(--random-x), var(--random-y))
+      rotate(var(--random-rotation));
+    opacity: 0;
+  }
+}
+
+/* Background burst */
+.burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 204, 0, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  animation: burstAnim 0.8s ease-out forwards;
+}
+
+@keyframes burstAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}

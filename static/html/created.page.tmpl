@@ -1,0 +1,25 @@
+{{ template "base" .}}
+
+{{define "title"}}Wish now is command.{{end}}
+
+{{define "body"}}
+  <div class="flex flex-col items-center gap-4 bg-white mx-4 p-4 rounded-lg md:w-[500px] w-full">
+    <p class="font-bold text-center p-4 italic text-gray-600">
+     Thanks for using our service. Here is a link that you can start sharing right now!
+    </p>
+    {{with .Wish}}
+        <div class="flex gap-3 w-full" x-data="{ open: false }">
+            <div class="w-full outline-none border border-gray-300 p-2 rounded-md cursor-pointer">
+                <p id="link">http://localhost:4000/c/{{ .Slug}}</p>
+            </div>
+            <button id="copyBtn" x-on:click="open = ! open" class="bg-gradient-to-r from-orange-600 via-yellow-600 to-pink-500 text-white rounded-md px-4 py-2">
+                Copy
+            </button>
+            <div x-show="open" x-transition class="absolute rounded-md left-0 bottom-0 m-4 text-black h-10 w-56 bg-green-300 flex justify-center items-center">
+              Copied
+            </div>
+        </div>
+    {{end}}
+  </div>
+ 
+{{end}}
